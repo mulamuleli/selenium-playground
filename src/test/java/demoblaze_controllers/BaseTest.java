@@ -12,7 +12,7 @@ import org.testng.annotations.AfterTest;
 
 public class BaseTest {
 
-    public WebDriver driver;
+    public static WebDriver driver;
 
     @BeforeTest
     public void setBaseURL() {
