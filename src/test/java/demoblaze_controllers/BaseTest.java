@@ -1,4 +1,4 @@
-package playground;
+package demoblaze_controllers;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -19,13 +19,14 @@ public class BaseTest {
         FirefoxOptions capabilities = new FirefoxOptions();
         WebDriverManager.firefoxdriver().setup();
         driver = new FirefoxDriver(capabilities);
-        driver.get("http://automationpractice.com/index.php");
+        driver.manage().window().maximize();
+        driver.get("https://demoblaze.com/");
     }
 
-    @AfterTest
+   /* @AfterTest
     public void endSession() {
         driver.quit();
-    }
+    }*/
 
 
 }
