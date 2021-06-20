@@ -1,6 +1,8 @@
 package demoblaze_controllers;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -63,5 +65,22 @@ public class DemoblazeControls extends BaseTest
         {
 //            MIQExceptionHandle.HandleException(e, "Failed to enter data in " + elementName + " textbox");
         }
+    }
+    public static void acceptAlert() throws Exception
+    {
+        String textOnAlert = null;
+        Alert alert = null;
+        try
+        {
+            alert = driver.switchTo().alert();
+            textOnAlert=alert.getText();
+            alert.accept();
+            System.out.println(textOnAlert);
+        }
+        catch (NoAlertPresentException ex)
+        {
+//            HandleException(ex,"There is no alert found")
+        }
+
     }
 }

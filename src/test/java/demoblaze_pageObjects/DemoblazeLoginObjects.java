@@ -8,4 +8,5 @@ public class DemoblazeLoginObjects
     public static final By LoginUsername_textField=  By.xpath("//input[@id='loginusername']");
     public static final By LoginPassword_passwordField = By.xpath("//input[@id='loginpassword']");
     public static final By Login_button=  By.xpath("//button[@onclick='logIn()']");
+    public static final By DemoblazeBrand_homePageLink = By.xpath("//a[contains(text(),' PRODUCT STORE')]");
 }

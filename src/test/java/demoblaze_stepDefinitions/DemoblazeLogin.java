@@ -2,9 +2,7 @@ package demoblaze_stepDefinitions;
 
 import demoblaze_controllers.BaseTest;
 import demoblaze_controllers.DemoblazeControls;
-import demoblaze_pageObjects.DemoBlazeSignUPObjects;
 import demoblaze_pageObjects.DemoblazeLoginObjects;
-import org.jsoup.Connection;
 import org.testng.annotations.Test;
 
 public class DemoblazeLogin extends BaseTest
