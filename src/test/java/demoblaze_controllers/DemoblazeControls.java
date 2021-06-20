@@ -1,10 +1,13 @@
 package demoblaze_controllers;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoAlertPresentException;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class DemoblazeControls extends BaseTest
 {
@@ -68,8 +71,8 @@ public class DemoblazeControls extends BaseTest
     }
     public static void acceptAlert() throws Exception
     {
-        String textOnAlert = null;
-        Alert alert = null;
+        String textOnAlert;
+        Alert alert;
         try
         {
             alert = driver.switchTo().alert();
@@ -82,5 +85,27 @@ public class DemoblazeControls extends BaseTest
 //            HandleException(ex,"There is no alert found")
         }
 
+    }
+    public static String getElementText(By object,String elementName)
+    {
+        String sText="";
+        try {
+            if(driver.findElement(object).isDisplayed())
+            {
+                sText=driver.findElement(object).getText();
+                System.out.println("Fetched"+elementName+ " Text");
+//                DemoblazeLog.info("Fetched "+elementName+" text");
+            }
+            else
+            {
+                System.out.println("Failed to get text from " + elementName);
+//                DemoblazeExceptionHandle.HandleAssertion("Failed to get text from " + elementName);
+            }
+        }
+        catch (Exception e)
+        {
+            /* MIQExceptionHandle.HandleException(e, "Failed to to get text: "+elementName); */
+        }
+        return sText;
     }
 }

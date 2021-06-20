@@ -2,20 +2,18 @@ package demoblaze_stepDefinitions;
 
 import demoblaze_controllers.BaseTest;
 import demoblaze_controllers.DemoblazeControls;
+import demoblaze_pageObjects.DemoblazeCartObjects;
 import demoblaze_pageObjects.DemoblazeLoginObjects;
 import demoblaze_pageObjects.DemoblazeAddProductToCartObjects;
 
 
 import org.openqa.selenium.Alert;
-import org.sikuli.script.FindFailed;
-import org.sikuli.script.Pattern;
-import org.sikuli.script.Screen;
 import org.testng.annotations.Test;
 
 public class DemoblazeAddProductToCart extends BaseTest
 {
     @Test
-    public void AddProductToCart() throws Exception {
+    public static void AddProductToCart() throws Exception {
         //login to profile first
         DemoblazeControls.waitForElement(DemoblazeLoginObjects.Login_linkButton, 10);
         DemoblazeControls.clickOnElement(DemoblazeLoginObjects.Login_linkButton, "Login Link");
@@ -67,5 +65,9 @@ public class DemoblazeAddProductToCart extends BaseTest
         DemoblazeControls.waitForElement(DemoblazeLoginObjects.DemoblazeBrand_homePageLink,5);
         DemoblazeControls.clickOnElement(DemoblazeLoginObjects.DemoblazeBrand_homePageLink, "Demoblaze Home Page Link");
 
+
+        //Navigate to Cart
+        DemoblazeControls.waitForElement(DemoblazeCartObjects.Cart_link,3);
+        DemoblazeControls.clickOnElement(DemoblazeCartObjects.Cart_link, "Cart Link");
     }
 }
